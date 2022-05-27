@@ -12,7 +12,7 @@ class Aplicativo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.amber,title: Align(child: Text("MeuApp", style: TextStyle(color: Colors.black, fontSize: 30)))),
+      appBar: AppBar(backgroundColor: Colors.amberAccent,title: Align(child: Text("MeuApp", style: TextStyle(color: Colors.black, fontSize: 30)))),
 
       body: Center(
         child: Form(
@@ -31,6 +31,7 @@ class Aplicativo extends StatelessWidget {
               Text(""),
 
               TextFormField(
+                obscureText: true,
                 decoration: InputDecoration(
                   labelText: "Senha",
                   prefixIcon: Icon(Icons.lock),
@@ -42,7 +43,7 @@ class Aplicativo extends StatelessWidget {
               Text(""),
 
               Container(
-                color: Colors.amber, width: 100,
+                color: Colors.amberAccent, width: 100,
                 child: TextButton(
                     onPressed: (){
 
