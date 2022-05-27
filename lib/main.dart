@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'com.wolfsInn.signUp/signUp.dart';
 
 void main()
 {
@@ -48,7 +49,13 @@ class Aplicativo extends StatelessWidget {
                     },
                     child: Text("Entrar",style: TextStyle(color: Colors.black, fontSize: 25))
                 ),
+              ),
+              
+              Container(
+                child: TextButton(
+                  onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (Context)=>SignUp()));},child: Text("Novo? Cadastre-se!"),),
               )
+
             ],
           )
         ),
