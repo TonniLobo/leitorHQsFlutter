@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'com.wolfsInn.signUp/signUp.dart';
+import 'com.wolfsInn.app/home.dart';
 
 void main()
 {
@@ -45,9 +46,7 @@ class Aplicativo extends StatelessWidget {
               Container(
                 color: Colors.amberAccent, width: 100,
                 child: TextButton(
-                    onPressed: (){
-
-                    },
+                    onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (Context)=>Home()));},
                     child: Text("Entrar",style: TextStyle(color: Colors.black, fontSize: 25))
                 ),
               ),

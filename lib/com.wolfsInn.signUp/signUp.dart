@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:leitor/com.wolfsInn.signUp/usuario.dart';
+import 'package:leitor/main.dart';
 
 void main()
 {
@@ -17,22 +18,21 @@ class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.amberAccent,title: Text("Sign Up",style: TextStyle(color: Colors.black, fontSize: 24))),
+      appBar: AppBar(backgroundColor: Colors.amberAccent,title: Text("Cadastro",style: TextStyle(color: Colors.black, fontSize: 24))),
 
       body: Center(
-        child: Form(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+        child: ListView(
             children: [
-              Image(image: AssetImage("res/user.png"),width: 100,),
+              Padding(padding: EdgeInsets.all(0), child: Image(image: AssetImage("res/user.png"),width: 50,)),
+
               Text("Insira um nome de Usuário: ",style: TextStyle(fontSize: 20),),
 
               Text(""),
 
               TextFormField(
                 decoration: InputDecoration(
-                  labelText: "Nome do Usuário",
-                  border: OutlineInputBorder()
+                    labelText: "Nome do Usuário",
+                    border: OutlineInputBorder()
                 ),
               ),
 
@@ -45,8 +45,8 @@ class _SignUpState extends State<SignUp> {
               TextFormField(
                 obscureText: true,
                 decoration: InputDecoration(
-                    labelText: "senha",
-                    border: OutlineInputBorder(),
+                  labelText: "senha",
+                  border: OutlineInputBorder(),
                 ),
               ),
 
@@ -65,10 +65,16 @@ class _SignUpState extends State<SignUp> {
               ),
 
               Text(""),
-            ],
-          ),
+
+              TextButton(
+                style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.amberAccent)),
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (Context)=>Aplicativo()));},
+                  child: Text("Cadastrar", style: TextStyle(color: Colors.black, fontSize: 20),),
+              )
+            ]
+          )
         ),
-      ),
     );
   }
 }
